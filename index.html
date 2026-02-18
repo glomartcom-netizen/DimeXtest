@@ -1,99 +1,290 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wallet Test</title>
+
+<title>Wallet</title>
 
 <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
-<script src="https://unpkg.com/@walletconnect/ethereum-provider@2.11.0/dist/index.umd.js"></script>
+
+<script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
 
 <style>
+
 body{
-background:#000;
-color:#fff;
-font-family:Arial;
+
+background:black;
+
+color:white;
+
 text-align:center;
-padding-top:80px;
+
+margin-top:120px;
+
+font-family:Arial;
+
 }
+
 button{
-padding:16px 30px;
-font-size:18px;
+
+padding:15px 30px;
+
 background:gold;
+
 border:none;
-border-radius:10px;
+
+font-size:18px;
+
+border-radius:8px;
+
 }
+
 </style>
+
 </head>
 
 <body>
 
-<h2>DimeX Wallet Test</h2>
+<button onclick="connectWallet()">Connect Wallet</button>
 
-<button onclick="connect()">CONNECT WALLET</button>
+<div id="status" style="margin-top:20px;color:gold;"></div>
 
-<div id="status"></div>
-<div id="wallet"></div>
+<div id="dashboard" style="display:none;margin-top:40px;">
 
+<h3>Wallet Connected</h3>
+
+<button>Stake USDT</button>
+
+<button>Claim</button>
+
+</div>
 <script>
 
-let provider, signer;
+let provider;
 
-async function connect(){
+async function connectWallet(){
+
+// 🟢 MetaMask browser
+
+if(window.ethereum){
 
 try{
 
-document.getElementById("status").innerHTML="Connecting...";
+provider = new ethers.providers.Web3Provider(window.ethereum);
 
-let providerInstance=null;
+await provider.send("eth_requestAccounts", []);
 
-/* injected */
+const signer = provider.getSigner();
+
+const address = await signer.getAddress();
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Wallet</title>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+
+<script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+
+<style>
+
+body{
+
+background:black;
+
+color:white;
+
+text-align:center;
+
+margin-top:120px;
+
+font-family:Arial;
+
+}
+
+padding:15px 30px;
+
+background:gold;
+
+border:none;
+
+font-size:18px;
+
+border-radius:8px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button onclick="connectWallet()">Connect Wallet</button>
+
+<div id="status" style="margin-top:20px;color:gold;"></div>
+
+<div id="dashboard" style="display:none;margin-top:40px;">
+
+<h3>Wallet Connected</h3>
+
+<button>Stake USDT</button>
+
+<button>Claim</button>
+
+</div>
+
+<script>
+
+let provider;
+
+async function connectWallet(){
+
+// 🟢 MetaMask browser
+
 if(window.ethereum){
-providerInstance = new ethers.providers.Web3Provider(window.ethereum,"any");
-await window.ethereum.request({method:"eth_requestAccounts"});
+
+try{
+
+provider = new ethers.providers.Web3Provider(window.ethereum);
+
+await provider.send("eth_requestAccounts", []);
+
+const signer = provider.getSigner();
+
+const address = await signer.getAddress();
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Wallet</title>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+
+<script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+
+<style>
+
+body{
+
+background:black;
+
+color:white;
+text-align:center;
+
+margin-top:120px;
+
+font-family:Arial;
+
 }
 
-/* walletconnect */
-if(!providerInstance){
+button{
 
-const wc = await window.EthereumProvider.init({
-projectId:"30cfec2651a089d32f1a5b62b3aa8c81",
-chains:[56],
-showQrModal:true,
-metadata:{
-name:"DimeX",
-url:window.location.origin,
-icons:["https://i.ibb.co/zVB8fHMD/logo.png"]
+padding:15px 30px;
+
+background:gold;
+
+border:none;
+
+font-size:18px;
+
+border-radius:8px;
+
 }
+
+</style>
+
+</head>
+
+<body>
+
+<button onclick="connectWallet()">Connect Wallet</button>
+
+<div id="status" style="margin-top:20px;color:gold;"></div>
+
+<div id="dashboard" style="display:none;margin-top:40px;">
+
+<h3>Wallet Connected</h3>
+
+<button>Stake USDT</button>
+
+<button>Claim</button>
+
+</div>
+
+<script>
+
+let provider;
+
+async function connectWallet(){
+
+// 🟢 MetaMask browser
+
+if(window.ethereum){
+
+try{
+
+provider = new ethers.providers.Web3Provider(window.ethereum);
+
+await provider.send("eth_requestAccounts", []);
+
+const signer = provider.getSigner();
+
+const address = await signer.getAddress();
+
+document.getElementById("status").innerHTML =
+"Connected: " + address;
+
+document.getElementById("dashboard").style.display="block";
+
+return;
+
+}catch(err){
+
+console.log(err);
+
+}
+
+}
+
+// 🟢 WalletConnect mobile
+
+const walletConnectProvider = new WalletConnectProvider.default({
+
+rpc:{56:"https://bsc-dataseed.binance.org/"}
+
 });
 
-await wc.enable();
-providerInstance = new ethers.providers.Web3Provider(wc,"any");
-}
+await walletConnectProvider.enable();
 
-provider=providerInstance;
-signer=provider.getSigner();
+provider = new ethers.providers.Web3Provider(walletConnectProvider);
 
-const net=await provider.getNetwork();
+const signer = provider.getSigner();
 
-if(net.chainId!==56){
-alert("Switch to BNB Chain");
-return;
-}
+const address = await signer.getAddress();
 
-let addr=await signer.getAddress();
+document.getElementById("status").innerHTML =
 
-document.getElementById("wallet").innerHTML=addr;
-document.getElementById("status").innerHTML="Connected";
+"Connected: " + address;
 
-}catch(e){
-console.log(e);
-alert("FAILED");
-}
+document.getElementById("dashboard").style.display="block";
 
 }
 
 </script>
 
 </body>
-</html>
+
+</html>  
