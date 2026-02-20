@@ -213,28 +213,13 @@ padding:20px;
 border-radius:12px;
 }
 
-/* ================== DEFAULT (DESKTOP) ================== */
+/* ===== SAFE FINAL STYLE ===== */
 
+/* box normal */
 .box{
-  background:#111;
-  padding:20px;
-  border-radius:12px;
-}
-
-/* Mobile images hide in desktop */
-.mobile{
-  display:none;
-}
-
-/* Slider overlay */
-.overlay{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:linear-gradient(to bottom,rgba(0,0,0,0.55),rgba(0,0,0,0.75));
-  z-index:1;
+background:#111;
+padding:20px;
+border-radius:12px;
 }
 
 /* Footer style */
@@ -242,55 +227,55 @@ border-radius:12px;
   text-align:center;
   padding:40px;
   color:#777;
+}  
+  
+/* overlay dark but correct */
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to bottom,rgba(0,0,0,0.65),rgba(0,0,0,0.9));
+z-index:1;
 }
 
+/* paragraph tight gap */
+.section p{
+margin-bottom:8px;
+line-height:1.55;
+}
 
-/* ================== MOBILE ONLY ================== */
-
+/* ===== MOBILE ===== */
 @media(max-width:768px){
 
-  .desktop{
-    display:none;
-  }
+.desktop{display:none;}
+.mobile{display:block;}
 
-  .mobile{
-    display:block;
-  }
+.slider{height:82vh;}
 
-  .slider{
-    height:82vh;
-  }
+.section{padding:24px 5%;}
 
-  .section{
-    padding:22px 5%;
-  }
-
-  .grid{
-    display:grid;
-    grid-template-columns:1fr !important;
-    gap:14px;
-  }
-
-  .box{
-    padding:16px;
-    width:100%;
-  }
-
-  .heroText h1{
-    font-size:26px;
-  }
-
-  /* tighter paragraph mobile */
-  .section p{
-    padding:10px 14px;
-    margin-bottom:8px;
-    line-height:1.5;
-  }
-
+.grid{
+grid-template-columns:1fr !important;
+gap:14px;
 }
 
-</style>
-  
+.box{
+padding:16px;
+}
+
+.heroText h1{
+font-size:26px;
+}
+
+.section p{
+margin-bottom:6px;
+line-height:1.5;
+}
+
+}
+</style> 
 </head>
   
 <body>
