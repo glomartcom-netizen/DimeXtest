@@ -126,6 +126,47 @@ color:gold;
 font-size:30px;
 }
 
+.infoGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+max-width:1000px;
+margin:auto;
+}
+
+.infoCard{
+background:#0d0d0d;
+border:1px solid #222;
+padding:35px 20px;
+border-radius:16px;
+text-align:center;
+transition:0.3s;
+}
+
+.infoCard:hover{
+transform:translateY(-6px);
+border:1px solid gold;
+box-shadow:0 0 25px rgba(255,215,0,0.2);
+}
+
+.infoIcon{
+font-size:34px;
+color:gold;
+margin-bottom:15px;
+}
+
+.infoTitle{
+color:#aaa;
+font-size:15px;
+}
+
+.infoValue{
+font-size:22px;
+color:#fff;
+margin-top:6px;
+font-weight:bold;
+  }
+  
 .icon{
 color:gold;
 margin-right:8px;
@@ -195,46 +236,47 @@ function enter(){
 <span id="tickerText">Loading crypto market...</span>
 </div>
 
-<!-- GRAND PROJECT DETAILS -->
+<!-- PROJECT DETAILS PREMIUM -->
 <div class="section">
 
-<div class="projectWrap">
+<h2 style="text-align:center;color:gold;font-size:36px;margin-bottom:40px;">
+<i class="fa-solid fa-layer-group"></i>
+DimeX Overview
+</h2>
 
-<div class="projectTitle">
-<i class="fa-solid fa-folder-open"></i>
-DimeX Project Overview
-</div>
-
-<div class="tokenCard">
-<img src="https://i.ibb.co/HpqwGFqt/logo.png">
-<div class="tokenName">DimeX (DMX)</div>
-<div class="tokenSub">BNB Smart Chain • BEP-20</div>
-</div>
-
-<div class="projectGrid">
+<div class="infoGrid">
 
 <div class="infoCard">
 <div class="infoIcon"><i class="fa-solid fa-coins"></i></div>
 <div class="infoTitle">Token</div>
-<div class="infoValue">DMX</div>
+<div class="infoValue">DIMEX (DMX) BEP20</div>
 </div>
-
+  
 <div class="infoCard">
 <div class="infoIcon"><i class="fa-solid fa-link"></i></div>
 <div class="infoTitle">Network</div>
-<div class="infoValue">BNB Chain</div>
+<div class="infoValue">BNB SMART CHAIN</div>
+</div>
+  
+<div class="infoCard">
+<div class="infoIcon"><i class="fa-solid fa-badge-check"></i></div>
+<div class="infoTitle">Contract</div>
+<div class="infoValue">BSCScan Verified</div>
 </div>
 
 <div class="infoCard">
 <div class="infoIcon"><i class="fa-solid fa-chart-line"></i></div>
-<div class="infoTitle">Use</div>
-<div class="infoValue">Staking</div>
+<div class="infoTitle">Utility</div>
+<div class="infoValue">Staking & Rewards</div>
 </div>
 
 <div class="infoCard">
 <div class="infoIcon"><i class="fa-solid fa-database"></i></div>
-<div class="infoTitle">Supply</div>
-<div class="infoValue">1B DMX</div>
+<div class="infoTitle">Total Supply</div>
+<div class="infoValue">1,000,000,000 DMX</div>
+</div>
+
+</div>
 </div>
 
   </div>  <!-- grid close -->
