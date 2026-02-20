@@ -157,17 +157,19 @@ gap:10px;   /* 25px → 10px */
 }
 
 .infoCard{
-background:#0d0d0d;
-border:1px solid #222;
-padding:35px;
+.infoCard{
+background:#080808;          /* darker */
+border:1px solid rgba(255,255,255,0.06);
+padding:32px;
 border-radius:16px;
 text-align:center;
 transition:0.3s;
+box-shadow:0 0 20px rgba(0,0,0,0.6);   /* depth */
 }
 
 .infoCard:hover{
 border:1px solid gold;
-box-shadow:0 0 25px rgba(255,215,0,0.2);
+box-shadow:0 0 30px rgba(255,215,0,0.25);
 transform:translateY(-4px);
 }
 
@@ -231,17 +233,8 @@ border-radius:12px;
   left:0;
   width:100%;
   height:100%;
-  background:linear-gradient(to bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.98));
+  background:linear-gradient(to bottom,rgba(0,0,0,0.55),rgba(0,0,0,0.75));
   z-index:1;
-}
-
-/* Paragraph dark box */
-.section p{
-  background:rgba(0,0,0,0.9);
-  padding:14px 18px;
-  border-radius:12px;
-  line-height:1.6;
-  margin-bottom:10px;
 }
 
 /* Footer style */
