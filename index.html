@@ -49,14 +49,26 @@ opacity:1;
 
 .desktop{display:none;}
 .mobile{display:block;}
-.slider{height:80vh;}
+
+.slider{
+height:82vh;
+}
 
 .grid{
-grid-template-columns:1fr;
+display:grid;
+grid-template-columns:1fr !important;
 }
 
 .section{
-padding:40px 6%;
+padding:35px 6%;
+}
+
+.box{
+width:100%;
+}
+
+.heroText h1{
+font-size:28px;
 }
 
 }
@@ -717,7 +729,30 @@ setInterval(loadPrices,15000);
 
 });
 </script>
+  
+<script>
+window.addEventListener("load", function(){
 
+let slides = document.querySelectorAll(".slide");
+let i = 0;
+
+slides[i].classList.add("active");
+
+setInterval(()=>{
+
+let next = (i + 1) % slides.length;
+
+slides[next].classList.add("active");
+
+setTimeout(()=>{
+slides[i].classList.remove("active");
+i = next;
+}, 900);
+
+}, 3500);
+
+});
+</script>
 
 </body>
 </html>
