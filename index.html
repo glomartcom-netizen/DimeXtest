@@ -719,35 +719,36 @@ setInterval(loadPrices,15000);
 </script>
   
 <script>
-window.addEventListener("load", function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-let slides;
-
-if(window.innerWidth <= 768){
-  slides = document.querySelectorAll(".slide.mobile");
-}else{
-  slides = document.querySelectorAll(".slide.desktop");
-}
-
+const slides = document.querySelectorAll(".slide");
 let i = 0;
+
+function startSlider(){
+
 slides[0].classList.add("active");
 
 setInterval(()=>{
 
-let next = (i+1) % slides.length;
-
-slides[next].classList.add("active");
-
-setTimeout(()=>{
 slides[i].classList.remove("active");
-i = next;
-}, 700);
+i = (i + 1) % slides.length;
+slides[i].classList.add("active");
 
 }, 3500);
 
+}
+
+if(slides.length){
+if(slides[0].complete){
+startSlider();
+}else{
+slides[0].onload = startSlider;
+}
+}
+
 });
 </script>
-
+  
 </body>
 </html>
 
