@@ -22,7 +22,7 @@ color:#fff;
 /* SLIDER */
 .slider{
 width:100%;
-height:100vh;   /* full height */
+height:90vh;
 position:relative;
 overflow:hidden;
 background:#000;
@@ -34,15 +34,21 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-object-fit:contain;   /* CUT ஆகாது */
-object-position:center;
-background:#000;
+object-fit:cover;
 opacity:0;
-transition:opacity 1s ease-in-out;
+transition:opacity 1s;
 }
 
 .slide.active{
 opacity:1;
+}
+
+.mobile{display:none;}
+
+@media(max-width:768px){
+.desktop{display:none;}
+.mobile{display:block;}
+.slider{height:80vh;}
 }
 
 .overlay{
@@ -225,30 +231,6 @@ padding:40px;
 color:#777;
 }
 
-@media(max-width:900px){
-
-.slider{
-height:95vh;
-}
-
-.heroText h1{
-font-size:26px;
-white-space:nowrap;
-}
-
-.section{
-padding:25px 5%;
-}
-
-.grid{
-grid-template-columns:1fr;
-gap:12px;
-}
-
-.box{
-padding:14px;
-}
-
 }
 </style>
 </head>
@@ -263,11 +245,19 @@ padding:14px;
 <img src="https://raw.githubusercontent.com/glomartcom-netizen/Dimexhome/main/logodashbord.png">
 </div>
 
-<img class="slide active"
+<!-- DESKTOP -->
+<img class="slide desktop active"
 src="https://glomartcom-netizen.github.io/Dimexhome/file_0000000010947208bc00676243f4f87a.png">
 
-<img class="slide"
+<img class="slide desktop"
 src="https://glomartcom-netizen.github.io/Dimexhome/file_00000000c6a072089a23049a3dd76e06.png">
+
+<!-- MOBILE -->
+<img class="slide mobile"
+src="https://raw.githubusercontent.com/glomartcom-netizen/DimeXtest/main/mobileslide1.png">
+
+<img class="slide mobile"
+src="https://raw.githubusercontent.com/glomartcom-netizen/DimeXtest/main/mobileslide2.png">
 
 <div class="overlay"></div>
 
