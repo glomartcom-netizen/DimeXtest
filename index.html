@@ -720,21 +720,27 @@ setInterval(loadPrices,15000);
 <script>
 window.addEventListener("load", function(){
 
-let slides = document.querySelectorAll(".slide");
-let i = 0;
+let slides;
 
-slides[i].classList.add("active");
+if(window.innerWidth <= 768){
+  slides = document.querySelectorAll(".slide.mobile");
+}else{
+  slides = document.querySelectorAll(".slide.desktop");
+}
+
+let i = 0;
+slides[0].classList.add("active");
 
 setInterval(()=>{
 
-let next = (i + 1) % slides.length;
+let next = (i+1) % slides.length;
 
 slides[next].classList.add("active");
 
 setTimeout(()=>{
 slides[i].classList.remove("active");
 i = next;
-}, 900);
+}, 700);
 
 }, 3500);
 
