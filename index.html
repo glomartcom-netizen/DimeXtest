@@ -44,59 +44,7 @@ z-index:0;   /* ADD THIS */
 opacity:1;
 z-index:2;
 }
-
-.mobile{display:none;}
-
-@media(max-width:768px){
-
-.desktop{display:none;}
-.mobile{display:block;}
-
-.slider{
-height:82vh;
-}
-
-.grid{
-display:grid;
-grid-template-columns:1fr !important;
-}
-
-.section{
-padding:25px 5%;
-}
-
-.grid{
-  gap:14px;          /* cards gap குறையும் */
-}
-
-.box{
-  padding:16px;      /* உள்ள gap குறையும் */
-}
-
-p{
-  line-height:1.5;   /* paragraph tight */
-}
   
-.box{
-width:100%;
-}
-
-.heroText h1{
-font-size:26px;
-}
-
-}
-
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(to bottom,rgba(0,0,0,0.55),rgba(0,0,0,0.75));
-z-index:1;   /* ADD THIS */
-}
-
 .topLogo{
 position:absolute;
 top:0;              /* remove top gap */
@@ -205,7 +153,7 @@ max-width:600px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:25px;
+gap:10px;   /* 25px → 10px */
 }
 
 .infoCard{
@@ -263,14 +211,93 @@ padding:20px;
 border-radius:12px;
 }
 
-.footer{
-text-align:center;
-padding:40px;
-color:#777;
+/* ================== DEFAULT (DESKTOP) ================== */
+
+.box{
+  background:#111;
+  padding:20px;
+  border-radius:12px;
 }
 
+/* Mobile images hide in desktop */
+.mobile{
+  display:none;
 }
+
+/* Slider overlay */
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:linear-gradient(to bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.98));
+  z-index:1;
+}
+
+/* Paragraph dark box */
+.section p{
+  background:rgba(0,0,0,0.9);
+  padding:14px 18px;
+  border-radius:12px;
+  line-height:1.6;
+  margin-bottom:10px;
+}
+
+/* Footer style */
+.footer{
+  text-align:center;
+  padding:40px;
+  color:#777;
+}
+
+
+/* ================== MOBILE ONLY ================== */
+
+@media(max-width:768px){
+
+  .desktop{
+    display:none;
+  }
+
+  .mobile{
+    display:block;
+  }
+
+  .slider{
+    height:82vh;
+  }
+
+  .section{
+    padding:22px 5%;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr !important;
+    gap:14px;
+  }
+
+  .box{
+    padding:16px;
+    width:100%;
+  }
+
+  .heroText h1{
+    font-size:26px;
+  }
+
+  /* tighter paragraph mobile */
+  .section p{
+    padding:10px 14px;
+    margin-bottom:8px;
+    line-height:1.5;
+  }
+
+}
+
 </style>
+  
 </head>
   
 <body>
