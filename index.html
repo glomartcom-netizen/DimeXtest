@@ -206,12 +206,17 @@ gap:25px;
   
 /* MATTE DARK CARD */
 .box{
-background:#111111;          /* matte dark grey */
-  border:1px solid #1c1c1c;    /* soft edge */
+background:#111111;
+  border:1px solid #1c1c1c;
   border-radius:14px;
   padding:20px;
-  box-shadow:none;             /* no glossy shine */
-  transition:0.3s ease;
+
+  /* SOFT EDGE SHADOW */
+  box-shadow:
+  0 0 0 1px rgba(255,255,255,0.02),   /* light edge */
+  0 6px 18px rgba(0,0,0,0.45);        /* depth shadow */
+
+  transition:0.3s;
 }
   
 .infoCard:hover{  
