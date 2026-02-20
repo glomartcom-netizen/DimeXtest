@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+LP<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -686,19 +686,6 @@ function enter(){
 }
 
 window.addEventListener("load", function(){
-
-  // SLIDER
-  let i = 0;
-  const slides = document.querySelectorAll(".slide");
-
-  setInterval(()=>{
-    if(slides.length){
-      slides[i].classList.remove("active");
-      i = (i + 1) % slides.length;
-      slides[i].classList.add("active");
-    }
-  }, 3500);
-
 
   // PRICE TICKER
   async function loadPrices(){
