@@ -126,27 +126,32 @@ color:gold;
 font-size:30px;
 }
 
-.infoGrid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-max-width:1000px;
+.infoColumn{
+max-width:600px;
 margin:auto;
+display:flex;
+flex-direction:column;
+gap:25px;
 }
 
 .infoCard{
 background:#0d0d0d;
 border:1px solid #222;
-padding:35px 20px;
+padding:35px;
 border-radius:16px;
 text-align:center;
 transition:0.3s;
 }
 
 .infoCard:hover{
-transform:translateY(-6px);
 border:1px solid gold;
 box-shadow:0 0 25px rgba(255,215,0,0.2);
+transform:translateY(-4px);
+}
+
+.infoLogo{
+width:50px;
+margin-bottom:15px;
 }
 
 .infoIcon{
@@ -165,7 +170,7 @@ font-size:22px;
 color:#fff;
 margin-top:6px;
 font-weight:bold;
-  }
+}
   
 .icon{
 color:gold;
@@ -236,42 +241,40 @@ function enter(){
 <span id="tickerText">Loading crypto market...</span>
 </div>
 
-<!-- PROJECT DETAILS PREMIUM -->
+<!-- PROJECT DETAILS -->
 <div class="section">
 
-<h2 style="text-align:center;color:gold;font-size:36px;margin-bottom:40px;">
-<i class="fa-solid fa-layer-group"></i>
-DimeX Overview
+<h2 style="text-align:center;">
+<i class="fa-solid fa-layer-group icon"></i>
+Project Overview
 </h2>
 
 <div class="infoGrid">
 
+<!-- TOKEN -->
 <div class="infoCard">
-<div class="infoIcon"><i class="fa-solid fa-coins"></i></div>
+<img src="https://raw.githubusercontent.com/glomartcom-netizen/Dimexhome/main/logodashbord.png" class="infoLogo">
 <div class="infoTitle">Token</div>
-<div class="infoValue">DIMEX (DMX) BEP20</div>
+<div class="infoValue">DMX</div>
 </div>
-  
+
+<!-- NETWORK -->
 <div class="infoCard">
-<div class="infoIcon"><i class="fa-solid fa-link"></i></div>
+<img src="https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png" class="infoLogo">
 <div class="infoTitle">Network</div>
-<div class="infoValue">BNB SMART CHAIN</div>
+<div class="infoValue">BNB Smart Chain</div>
 </div>
-  
+
+<!-- VERIFIED -->
 <div class="infoCard">
-<div class="infoIcon"><i class="fa-solid fa-badge-check"></i></div>
+<img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" class="infoLogo">
 <div class="infoTitle">Contract</div>
-<div class="infoValue">BSCScan Verified</div>
+<div class="infoValue">BscScan Verified</div>
 </div>
 
+<!-- SUPPLY -->
 <div class="infoCard">
-<div class="infoIcon"><i class="fa-solid fa-chart-line"></i></div>
-<div class="infoTitle">Utility</div>
-<div class="infoValue">Staking & Rewards</div>
-</div>
-
-<div class="infoCard">
-<div class="infoIcon"><i class="fa-solid fa-database"></i></div>
+<i class="fa-solid fa-database infoIcon"></i>
 <div class="infoTitle">Total Supply</div>
 <div class="infoValue">1,000,000,000 DMX</div>
 </div>
