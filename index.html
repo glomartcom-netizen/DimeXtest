@@ -718,24 +718,6 @@ setInterval(loadPrices,15000);
 });
 </script>
 
-<script>
-window.addEventListener("load", function(){
-
-let slides = document.querySelectorAll(".slide");
-let i = 0;
-
-slides[0].classList.add("active");
-
-setInterval(()=>{
-
-slides[i].classList.remove("active");
-i = (i + 1) % slides.length;
-slides[i].classList.add("active");
-
-}, 3500);
-
-});
-</script>
   
 </body>
 </html>
