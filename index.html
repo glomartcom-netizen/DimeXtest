@@ -1,4 +1,4 @@
-<!DOCTYPE html>  <html>  
+ok<!DOCTYPE html>  <html>  
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
@@ -501,14 +501,12 @@ window.addEventListener("load", function(){
   
       document.getElementById("tickerText").innerHTML = txt;  
   
-    }catch(e){  
-      document.getElementById("tickerText").innerHTML =  
-      "API blocked / internet issue";  
-    }  
+  }catch(e){
+  console.log("API temporary block");
+  }
   }  
   
-  loadPrices();  
-setInterval(loadPrices,15000);  
+  setInterval(loadPrices,120000);  
   
 });  
 </script>  
