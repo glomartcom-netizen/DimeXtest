@@ -182,25 +182,27 @@ cursor:pointer;
  
 /* ticker */
 .ticker{
-background:#111;
-color:gold;
-padding:14px;
-overflow:hidden;
-white-space:nowrap;
+  background:#111;
+  color:gold;
+  padding:14px;
+  overflow:hidden;
+  white-space:nowrap;
+  position:relative;
 }
 
 /* moving text */
 .ticker span{
-display:inline-block;
-white-space:nowrap;
-animation:tickerMove 18s linear infinite;
+  position:absolute;
+  white-space:nowrap;
+  left:100%;
+  animation:tickerMove 20s linear infinite;
 }
 
 /* animation */
 @keyframes tickerMove{
-from{ transform:translateX(100%); }
-to{ transform:translateX(-100%); }
-}
+  from{ left:100%; }
+  to{ left:-100%; }
+  }
   
 /* sections */  
 .section{  
