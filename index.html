@@ -180,29 +180,27 @@ margin-top:15px;
 cursor:pointer;  
 }  
  
-/* ticker */
-.ticker{
-  background:#111;
-  color:gold;
-  padding:14px;
-  overflow:hidden;
-  white-space:nowrap;
-  position:relative;
+/* ===== TICKER FINAL FIX ===== */
+..ticker{
+background:#111;
+color:gold;
+padding:14px;
+overflow:hidden;
+white-space:nowrap;
+position:relative;
 }
 
-/* moving text */
 .ticker span{
-  position:absolute;
-  white-space:nowrap;
-  left:100%;
-  animation:tickerMove 20s linear infinite;
+display:inline-block;
+white-space:nowrap;
+animation:scroll 18s linear infinite;
 }
 
-/* animation */
-@keyframes tickerMove{
-  from{ left:100%; }
-  to{ left:-100%; }
-  }
+/* important change */
+@keyframes scroll{
+0%{transform:translateX(100%)}
+100%{transform:translateX(-100%)}
+}
   
 /* sections */  
 .section{  
