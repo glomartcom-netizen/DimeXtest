@@ -179,26 +179,28 @@ font-weight:bold;
 margin-top:15px;  
 cursor:pointer;  
 }  
-  
-/* ticker */  
-.ticker{  
-background:#111;  
-color:gold;  
-padding:14px;  
-overflow:hidden;  
-white-space:nowrap;  
-}  
-  
-.ticker span{  
-display:inline-block;  
-padding-left:0;  
-animation:scroll 40s linear infinite;  
-}  
-  
-@keyframes scroll{  
-0%{transform:translateX(100%)}  
-100%{transform:translateX(-100%)}  
-}  
+ 
+/* ticker */
+.ticker{
+background:#111;
+color:gold;
+padding:14px;
+overflow:hidden;
+white-space:nowrap;
+}
+
+/* moving text */
+.ticker span{
+display:inline-block;
+white-space:nowrap;
+animation:tickerMove 18s linear infinite;
+}
+
+/* animation */
+@keyframes tickerMove{
+from{ transform:translateX(100%); }
+to{ transform:translateX(-100%); }
+}
   
 /* sections */  
 .section{  
