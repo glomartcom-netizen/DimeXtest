@@ -181,26 +181,28 @@ cursor:pointer;
 }  
  
 /* ===== TICKER FINAL FIX ===== */
-..ticker{
-background:#111;
-color:gold;
-padding:14px;
-overflow:hidden;
-white-space:nowrap;
-position:relative;
+/* ===== FINAL TICKER FIX ===== */
+.ticker{
+  background:#111;
+  color:gold;
+  padding:14px 0;
+  overflow:hidden;
+  white-space:nowrap;
+  position:relative;
 }
 
 .ticker span{
-display:inline-block;
-white-space:nowrap;
-animation:scroll 18s linear infinite;
+  display:inline-block;
+  white-space:nowrap;
+  padding-left:100%;
+  animation:tickerMove 25s linear infinite;
 }
 
-/* important change */
-@keyframes scroll{
-0%{transform:translateX(100%)}
-100%{transform:translateX(-100%)}
-}
+/* smooth infinite scroll */
+@keyframes tickerMove{
+  0%   { transform:translateX(0); }
+  100% { transform:translateX(-100%); }
+  }
   
 /* sections */  
 .section{  
